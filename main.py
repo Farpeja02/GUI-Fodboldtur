@@ -1,16 +1,49 @@
-# This is a sample Python script.
+# importing tkinter module
+from tkinter import *
+from tkinter.ttk import *
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from listWindow import listWindowClass
+from payWindow import payWindowClass
+from worstWindow import worstWindowClass
+
+class mainWindow:
+    def __init__(self):
+        self.total = 1200
+        self.target = 4500
+        # creating tkinter window
+        self.root = Tk()
+
+        #TEXT
+
+        velkomst = Label(self.root, text="Velkommen til fodboldtur GUI")
+        velkomst.pack(pady=10)
+
+        # Progress bar widget
+        self.progressLabelText = StringVar()
+        self.progressLabelText.set(f"Indsamlet: {self.total} af {self.target} kroner:")
+
+        self.progressLabel = Label(self.root, textvariable=self.progressLabelText)
+        self.progressLabel.pack()
+        self.progress = Progressbar(self.root, orient = HORIZONTAL,
+                    length = 250, mode = 'determinate')
+        self.progress['value'] = self.total/self.target*100
+        #print(self.progress['length'])
+        #print(self.progress['value'])
+        #BUTTONS
+        self.progress.pack(padx= 20)
+
+        listButton = Button(self.root,text ="Liste over indbetalinger",command = lambda: listWindowClass(self))
+        listButton.pack(padx = 20, pady = 10,side=LEFT)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+        payButton = Button(self.root,text ="Indbetal",command = lambda: payWindowClass(self))
+        payButton.pack(padx = 20, pady = 10,side=LEFT)
 
+        bottom3Button = Button(self.root,text ="Bund 3",command = lambda: worstWindowClass(self))
+        bottom3Button.pack(padx = 20, pady = 10,side=LEFT)
 
-# Press the green button in the gutter to run the script.
+        # infinite loop
+        mainloop()
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main = mainWindow()
