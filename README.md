@@ -6,3 +6,6 @@ UML diagram:
 
 Flowchart:
 ![Flwochart](Images/Flowchart%231.jpg)
+
+Trello Timeline:
+![Trello Timeline](Images/TrelloTimeline.jpg)
