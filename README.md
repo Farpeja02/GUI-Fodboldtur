@@ -5,7 +5,7 @@ UML diagram:
 ![UML diagram](Images/UMLdiagram%231.jpg)
 
 Flowchart:
-![Flwochart](Images/Flowchart%231.jpg)
+![Flowchart](Images/Flowchart%231.jpg)
 
 Trello Timeline:
-![Trello Timeline](Images/TrelloTimeline.jpg)
+![Trello Timeline](Images/TrelloTimeline.png)
