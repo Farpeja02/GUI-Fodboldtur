@@ -2,9 +2,14 @@
 from tkinter import *
 from tkinter.ttk import *
 
+import pickle
+filename = 'betalinger.pk'
+fodboldtur = {}
+
 from listWindow import listWindowClass
 from payWindow import payWindowClass
 from worstWindow import worstWindowClass
+from addWindow import addWindowClass
 
 class mainWindow:
     def __init__(self):
@@ -42,8 +47,18 @@ class mainWindow:
         bottom3Button = Button(self.root,text ="Bund 3",command = lambda: worstWindowClass(self))
         bottom3Button.pack(padx = 20, pady = 10,side=LEFT)
 
+        addNameButtom = Button(self.root,text ="Tilføj",command = lambda: addWindowClass(self,fodboldturDict=fodboldtur))
+        addNameButtom.pack(padx = 20, pady = 10,side=LEFT)
+
+
         # infinite loop
         mainloop()
 
 if __name__ == '__main__':
     main = mainWindow()
+
+print(fodboldtur)
+infile = open(filename,'rb')
+fodboldtur = pickle.load(infile)
+infile.close()
+print(fodboldtur)

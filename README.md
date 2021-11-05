@@ -12,5 +12,5 @@ Flowchart:
 ![Flowchart](Images/Flowchart%231.jpg)
 
 Trello Timelinen er et overblik over hvilke af delene af koden vi stadig mangler.
-Trello Timeline:
+Trello Timeline: https://trello.com/b/noTSdpqj/fodboldturgui
 ![Trello Timeline](Images/TrelloTimeline.png)
