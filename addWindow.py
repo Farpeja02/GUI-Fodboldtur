@@ -4,12 +4,11 @@ from tkinter.ttk import *
 
 class addWindowClass:
 
-    def __init__(self, master,fodboldturDict):
+    def __init__(self, master):
         self.master = master #reference til main window objektet
         self.addWindow = Toplevel(self.master.root)
         self.addWindow.title("Add a member")
         self.addWindow.geometry("200x200")
-        self.fodboldtur = fodboldturDict
 
 
         Label(self.addWindow,
@@ -23,5 +22,5 @@ class addWindowClass:
 
     def addName(self):
         navn= self.add.get() #HUSK AT VALIDERE INPUT!, kun positive heltal!
-        self.fodboldtur.update({navn: 0})
+        self.master.fodboldtur.update({navn: 0})
 

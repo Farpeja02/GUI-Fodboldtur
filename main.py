@@ -4,7 +4,6 @@ from tkinter.ttk import *
 
 import pickle
 filename = 'betalinger.pk'
-fodboldtur = {}
 
 from listWindow import listWindowClass
 from payWindow import payWindowClass
@@ -17,7 +16,15 @@ class mainWindow:
         self.target = 4500
         # creating tkinter window
         self.root = Tk()
+        self.fodboldtur = {}
 
+        try:
+            infile = open(filename, 'rb')
+            self.fodboldtur = pickle.load(infile)
+            infile.close()
+        except:
+            ###warn warn popoupupopppp
+            print("Noget gik galt i loading a pickle")
         #TEXT
 
         velkomst = Label(self.root, text="Velkommen til fodboldtur GUI")
@@ -47,18 +54,27 @@ class mainWindow:
         bottom3Button = Button(self.root,text ="Bund 3",command = lambda: worstWindowClass(self))
         bottom3Button.pack(padx = 20, pady = 10,side=LEFT)
 
-        addNameButtom = Button(self.root,text ="Tilføj",command = lambda: addWindowClass(self,fodboldturDict=fodboldtur))
+        addNameButtom = Button(self.root,text ="Tilføj",command = lambda: addWindowClass(self))
         addNameButtom.pack(padx = 20, pady = 10,side=LEFT)
+
+        saveButton = Button(self.root,text ="Tilføj",command = self.savePickleDict)
+        saveButton.pack(padx = 20, pady = 10,side=LEFT)
 
 
         # infinite loop
         mainloop()
 
+    def savePickleDict(self):
+        outfile = open(filename, 'wb')
+        pickle.dump(self.fodboldtur, outfile)
+        outfile.close()
+        print("Filen er gemt!")
+        print(self.fodboldtur)
+
+
+
 if __name__ == '__main__':
+
     main = mainWindow()
 
-print(fodboldtur)
-infile = open(filename,'rb')
-fodboldtur = pickle.load(infile)
-infile.close()
-print(fodboldtur)
+    print("hej")
