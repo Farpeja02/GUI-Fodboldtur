@@ -1,7 +1,7 @@
 # importing tkinter module
 from tkinter import *
 from tkinter.ttk import *
-from PIL import ImageTk,Image
+
 
 
 class listWindowClass:
@@ -11,9 +11,22 @@ class listWindowClass:
         self.listWindow.title("List Window")
         self.listWindow.geometry("500x500")
 
-        Label(self.listWindow, text="Liste over indbetalinger.. eller.. noget der ligner en cylinder").pack()
 
-        img = ImageTk.PhotoImage(Image.open("assets/img/cyl.png"))
-        panel = Label(self.listWindow, image=img)
-        panel.image = img
-        panel.pack(side="bottom", fill="both", expand="yes")
+
+
+
+        height = len(self.master.fodboldtur)
+        width = 2
+        print(self.master.fodboldtur)
+        value = self.master.fodboldtur.values()
+        valueList = list(value)
+
+        for i in range(height):  # Rows
+            for j in range(width):  # Columns
+                if j == 0:
+
+                    text = str(list(self.master.fodboldtur.keys())[i])
+                    b = Label(self.listWindow, text=text)
+                else:
+                    b = Label(self.listWindow, text=str(valueList[i]))
+                b.grid(row=i, column=j)
