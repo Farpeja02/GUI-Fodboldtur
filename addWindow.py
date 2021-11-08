@@ -12,15 +12,17 @@ class addWindowClass:
 
 
         Label(self.addWindow,
-              text="tilføj").pack()
+              text="Skriv dit navn").pack()
 
         self.add = Entry(self.addWindow)
         self.add.pack()
 
-        self.button = Button(self.addWindow, text="tilføj", command= self.addName())
+        self.button = Button(self.addWindow, text="tilføj", command= self.addName)
         self.button.pack()
 
     def addName(self):
         navn= self.add.get() #HUSK AT VALIDERE INPUT!, kun positive heltal!
         self.master.fodboldtur.update({navn: 0})
+        print(self.master.fodboldtur)
+        print("add name er kørt")
 

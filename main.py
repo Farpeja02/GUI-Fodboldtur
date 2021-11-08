@@ -57,7 +57,7 @@ class mainWindow:
         addNameButtom = Button(self.root,text ="Tilføj",command = lambda: addWindowClass(self))
         addNameButtom.pack(padx = 20, pady = 10,side=LEFT)
 
-        saveButton = Button(self.root,text ="Tilføj",command = self.savePickleDict)
+        saveButton = Button(self.root,text ="Gem",command = self.savePickleDict)
         saveButton.pack(padx = 20, pady = 10,side=LEFT)
 
 
