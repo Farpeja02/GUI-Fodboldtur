@@ -5,11 +5,11 @@ GUI sketch:
 
 UML diagrammet giver et overblik over hvordan de forskellige classes virker, og hvordan de er sammensat.
 UML diagram:
-![UML diagram](Images/UMLdiagram%231.jpg)
+![UML diagram](Images/UMLdiagram%232.jpg)
 
 Flowchartet giver et overblik over bevægelsen der gennem kode, og hvad der leder til hvad.
 Flowchart:
-![Flowchart](Images/Flowchart%231.jpg)
+![Flowchart](Images/Flowchart%232.jpg)
 
 Trello Timelinen er et overblik over hvilke af delene af koden vi stadig mangler.
 Trello Timeline: https://trello.com/b/noTSdpqj/fodboldturgui
