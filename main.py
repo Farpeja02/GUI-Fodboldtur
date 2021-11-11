@@ -30,6 +30,12 @@ class mainWindow:
         velkomst = Label(self.root, text="Velkommen til fodboldtur GUI")
         velkomst.pack(pady=10)
 
+        payButton = Button(self.root,text ="Indbetal",command = lambda: payWindowClass(self))
+        payButton.pack(padx = 20, pady = 10,side=LEFT)
+
+        saveButton = Button(self.root,text ="Gem",command = self.savePickleDict)
+        saveButton.pack(padx = 20, pady = 10,side=RIGHT)
+
         # Progress bar widget
         self.progressLabelText = StringVar()
         self.progressLabelText.set(f"Indsamlet: {self.total} af {self.target} kroner:")
@@ -42,23 +48,16 @@ class mainWindow:
         #print(self.progress['length'])
         #print(self.progress['value'])
         #BUTTONS
-        self.progress.pack(padx= 20)
+        self.progress.pack(padx= 20, pady= 10)
 
         listButton = Button(self.root,text ="Liste over indbetalinger",command = lambda: listWindowClass(self))
-        listButton.pack(padx = 20, pady = 10,side=LEFT)
-
-
-        payButton = Button(self.root,text ="Indbetal",command = lambda: payWindowClass(self))
-        payButton.pack(padx = 20, pady = 10,side=LEFT)
+        listButton.pack(padx = 20, pady = 20,side=LEFT)
 
         bottom3Button = Button(self.root,text ="Bund 3",command = lambda: worstWindowClass(self))
-        bottom3Button.pack(padx = 20, pady = 10,side=LEFT)
+        bottom3Button.pack(padx = 20, pady = 20,side=LEFT)
 
         addNameButtom = Button(self.root,text ="Tilføj",command = lambda: addWindowClass(self))
-        addNameButtom.pack(padx = 20, pady = 10,side=LEFT)
-
-        saveButton = Button(self.root,text ="Gem",command = self.savePickleDict)
-        saveButton.pack(padx = 20, pady = 10,side=LEFT)
+        addNameButtom.pack(padx = 20, pady = 20,side=LEFT)
 
 
         # infinite loop

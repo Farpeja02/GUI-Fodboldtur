@@ -14,6 +14,14 @@ class payWindowClass:
         Label(self.payWindow,
               text="Indbetal").pack()
 
+        self.options = StringVar(self.payWindow)
+        self.options.set("Vælg et navn") #Virker ikke...?
+        key = self.master.fodboldtur.keys()
+        keyList = list(key)
+
+        dropDown = OptionMenu(self.payWindow, self.options, *keyList)
+        dropDown.pack()
+
         self.money = Entry(self.payWindow)
         self.money.pack()
 
