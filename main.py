@@ -12,11 +12,12 @@ from addWindow import addWindowClass
 
 class mainWindow:
     def __init__(self):
-        self.total = 1200
+
         self.target = 4500
         # creating tkinter window
         self.root = Tk()
         self.fodboldtur = {}
+
 
         try:
             infile = open(filename, 'rb')
@@ -26,6 +27,8 @@ class mainWindow:
             ###warn warn popoupupopppp
             print("Noget gik galt i loading a pickle")
         #TEXT
+        self.total = sum(self.fodboldtur[item] for item in self.fodboldtur)
+        print(self.total)
 
         velkomst = Label(self.root, text="Velkommen til fodboldtur GUI")
         velkomst.pack(pady=10)
@@ -44,6 +47,7 @@ class mainWindow:
         self.progressLabel.pack()
         self.progress = Progressbar(self.root, orient = HORIZONTAL,
                     length = 250, mode = 'determinate')
+        self.total = sum(self.fodboldtur[item] for item in self.fodboldtur)
         self.progress['value'] = self.total/self.target*100
         #print(self.progress['length'])
         #print(self.progress['value'])
