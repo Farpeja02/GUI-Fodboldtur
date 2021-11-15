@@ -12,10 +12,10 @@ class payWindowClass:
         self.payWindow.geometry("200x200")
 
         Label(self.payWindow,
-              text="Indbetal").pack()
+              text="Indbetal").pack(pady=(5,15))
 
         self.options = StringVar(self.payWindow)
-        self.options.set("Vælg et navn") #Virker ikke...?
+        self.options.set("Vælg et navn")
         key = self.master.fodboldtur.keys()
         keyList = list(key)
 
@@ -24,22 +24,19 @@ class payWindowClass:
         self.dropDown.pack()
 
         self.money = Entry(self.payWindow)
-        self.money.pack()
+        self.money.pack(padx=30, pady=2)
 
         self.button = Button(self.payWindow, text="betal", command= self.addMoney)
-        self.button.pack()
+        self.button.pack(pady=2)
 
     def addMoney(self):
+        try:
+            self.master.fodboldtur[self.options.get()] += int(self.money.get())
+        except:
+            messagebox.showerror(parent=self.payWindow , title="Beløb fejl!", message="Prøv igen.\nKun hele tal!")
+            return
 
-            #amount = abs(int(self.money.get())) #HUSK AT VALIDERE INPUT!, kun positive heltal!
-        previousAmount = self.master.fodboldtur[self.options.get()]
-
-        self.master.fodboldtur[self.options.get()] += int(self.money.get())
-        #except:
-            #messagebox.showerror(parent=self.payWindow , title="Beløb fejl!", message="Prøv igen.\nKun hele tal!")
-            #return
-
-        #self.master.total += amount
-        #self.master.progressLabelText.set(f"Indsamlet: {self.master.total} af {self.master.target} kroner:")
-        #print(f"Indsamlet: {self.master.total} af {self.master.target} kroner!")
-        #self.master.progress['value'] = self.master.total / self.master.target * 100
+        self.master.total = sum(self.master.fodboldtur[item] for item in self.master.fodboldtur)
+        self.master.progressLabelText.set(f"Indsamlet: {self.master.total} af {self.master.target} kroner:")
+        print(f"Indsamlet: {self.master.total} af {self.master.target} kroner!")
+        self.master.progress['value'] = self.master.total / self.master.target * 100
