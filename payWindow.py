@@ -19,8 +19,9 @@ class payWindowClass:
         key = self.master.fodboldtur.keys()
         keyList = list(key)
 
-        dropDown = OptionMenu(self.payWindow, self.options, *keyList)
-        dropDown.pack()
+#OptionMenu(master,     variable,     value,     *values,     **kwargs    )
+        self.dropDown = OptionMenu(self.payWindow, self.options, None, *keyList)
+        self.dropDown.pack()
 
         self.money = Entry(self.payWindow)
         self.money.pack()
@@ -29,13 +30,16 @@ class payWindowClass:
         self.button.pack()
 
     def addMoney(self):
-        try:
-            amount = abs(int(self.money.get())) #HUSK AT VALIDERE INPUT!, kun positive heltal!
-        except:
-            messagebox.showerror(parent=self.payWindow , title="Beløb fejl!", message="Prøv igen.\nKun hele tal!")
-            return
 
-        self.master.total += amount
-        self.master.progressLabelText.set(f"Indsamlet: {self.master.total} af {self.master.target} kroner:")
-        print(f"Indsamlet: {self.master.total} af {self.master.target} kroner!")
-        self.master.progress['value'] = self.master.total / self.master.target * 100
+            #amount = abs(int(self.money.get())) #HUSK AT VALIDERE INPUT!, kun positive heltal!
+        previousAmount = self.master.fodboldtur[self.options.get()]
+
+        self.master.fodboldtur[self.options.get()] += int(self.money.get())
+        #except:
+            #messagebox.showerror(parent=self.payWindow , title="Beløb fejl!", message="Prøv igen.\nKun hele tal!")
+            #return
+
+        #self.master.total += amount
+        #self.master.progressLabelText.set(f"Indsamlet: {self.master.total} af {self.master.target} kroner:")
+        #print(f"Indsamlet: {self.master.total} af {self.master.target} kroner!")
+        #self.master.progress['value'] = self.master.total / self.master.target * 100
