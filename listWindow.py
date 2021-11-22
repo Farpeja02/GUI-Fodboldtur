@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter.ttk import *
 
-
+from worstWindow import worstWindowClass
 
 class listWindowClass:
     def __init__(self, master):
@@ -10,9 +10,6 @@ class listWindowClass:
         self.listWindow = Toplevel(self.master.root)
         self.listWindow.title("List Window")
         self.listWindow.geometry("500x500")
-
-
-
 
 
         height = len(self.master.fodboldtur)
@@ -30,3 +27,6 @@ class listWindowClass:
                 else:
                     b = Label(self.listWindow, text=str(valueList[i]))
                 b.grid(row=i, column=j)
+
+        bottom3Button = Button(self.listWindow, text="Bund 3", command=lambda: worstWindowClass(self))
+        bottom3Button.grid()
