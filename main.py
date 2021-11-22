@@ -60,7 +60,7 @@ class mainWindow:
         bottom3Button = Button(self.root,text ="Bund 3",command = lambda: worstWindowClass(self))
         bottom3Button.pack(padx = 20, pady = 20,side=LEFT)
 
-        addNameButtom = Button(self.root,text ="Tilføj",command = lambda: addWindowClass(self))
+        addNameButtom = Button(self.root,text ="Tilføj / Slet",command = lambda: addWindowClass(self))
         addNameButtom.pack(padx = 20, pady = 20,side=LEFT)
 
 
