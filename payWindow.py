@@ -10,7 +10,6 @@ class payWindowClass:
         self.payWindow = Toplevel(self.master.root)
         self.payWindow.title("Pay Window")
         self.payWindow.geometry("200x200")
-
         Label(self.payWindow,
               text="Indbetal").pack(pady=(5,15))
 

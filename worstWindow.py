@@ -8,6 +8,48 @@ class worstWindowClass:
         self.worstWindow = Toplevel(self.master.root)
         self.worstWindow.title("Bottom 3")
         self.worstWindow.geometry("200x200")
+        self.fodboldtur = self.master.fodboldtur
 
-        Label(self.worstWindow, text="De værste betalere").pack()
+
+        Label(self.worstWindow, text="De værste betalere")
+
+
+        def lowestThree(self):
+            sorteret=(sorted(self.master.fodboldtur.items(), key=lambda item: item[1]))
+            print(sorteret)
+            return sorteret[0:3]
+            """while len(templist) > 3:
+                #templist.values.pop(max(templist))
+                r = templist(max(templist))
+                del r[templist]
+            print("De her er dem der har betalt mindst")
+            print(templist)
+            return templist
+"""
+
+        templist = lowestThree(self)
+        height = len(templist)
+
+
+        width = 2
+
+
+        for i in range(height):  # Rows
+            for j in range(width):  # Columns
+                b = Label(self.worstWindow, text=templist[i][j])
+                b.grid(row=i, column=j)
+
+                """if j == 0:
+
+                    text = str(list(templist.keys())[i])
+                    b = Label(self.worstWindow, text=text)
+                else:
+                    b = Label(self.worstWindow, text=str(valueList[i]))
+"""
+
+
+
+
+
+
 

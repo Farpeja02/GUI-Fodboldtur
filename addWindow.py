@@ -37,6 +37,9 @@ class addWindowClass:
         self.master.fodboldtur.update({navn: 0})
         print(self.master.fodboldtur)
         print("add name er kørt")
+        #self.keyList.append(navn)
+        #self.dropDown.configure(self.addWindow, self.options, None, *self.keyList)
+        #self.dropDown.configure()
 
     def removeName(self):
         self.master.fodboldtur.pop(self.options.get(), None)
