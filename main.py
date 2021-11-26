@@ -17,6 +17,7 @@ class mainWindow:
         # creating tkinter window
         self.root = Tk()
         self.fodboldtur = {}
+        self.root.title("Main")
 
 
         try:

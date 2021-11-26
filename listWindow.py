@@ -27,6 +27,7 @@ class listWindowClass:
                 else:
                     b = Label(self.listWindow, text=str(valueList[i]))
                 b.grid(row=i, column=j)
-
+'''
         bottom3Button = Button(self.listWindow, text="Bund 3", command=lambda: worstWindowClass(self))
         bottom3Button.grid()
+'''
