@@ -33,25 +33,18 @@ class addWindowClass:
         self.removebButton.pack(pady=2)
 
     def addName(self):
-        navn= self.add.get() #HUSK AT VALIDERE INPUT!, kun positive heltal!
+        navn= self.add.get()
         self.master.fodboldtur.update({navn: 0})
-        print(self.master.fodboldtur)
-        print("add name er kørt")
         self.key = self.master.fodboldtur.keys()
         self.keyList = list(self.key)
         self.refreshOptionMenu()
-        #self.keyList.append(navn)
-        #self.dropDown.configure(self.addWindow, self.options, None, *self.keyList)
-        #self.dropDown.configure()
 
     def removeName(self):
         self.master.fodboldtur.pop(self.options.get(), None)
-        print("koden er kørt")
         self.key = self.master.fodboldtur.keys()
         self.keyList = list(self.key)
         self.refreshOptionMenu()
 
-        #self.keyList.remove(self.options.get()) #Key skal slettes fra list, og updatere options menu
 
     def refreshOptionMenu(self):
         #kill them and remake them :/
