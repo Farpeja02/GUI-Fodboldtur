@@ -2,8 +2,6 @@
 from tkinter import *
 from tkinter.ttk import *
 
-from worstWindow import worstWindowClass
-
 class listWindowClass:
     def __init__(self, master):
         self.master = master #reference til main window objektet
@@ -14,10 +12,10 @@ class listWindowClass:
 
         height = len(self.master.fodboldtur)
         width = 2
-        print(self.master.fodboldtur)
         value = self.master.fodboldtur.values()
         valueList = list(value)
 
+        #Creates a grid of the names from dict.
         for i in range(height):  # Rows
             for j in range(width):  # Columns
                 if j == 0:
@@ -27,7 +25,3 @@ class listWindowClass:
                 else:
                     b = Label(self.listWindow, text=str(valueList[i]))
                 b.grid(row=i, column=j)
-'''
-        bottom3Button = Button(self.listWindow, text="Bund 3", command=lambda: worstWindowClass(self))
-        bottom3Button.grid()
-'''

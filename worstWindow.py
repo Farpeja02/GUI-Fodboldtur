@@ -1,4 +1,3 @@
-# importing tkinter module
 from tkinter import *
 from tkinter.ttk import *
 
@@ -13,19 +12,11 @@ class worstWindowClass:
 
         Label(self.worstWindow, text="De værste betalere")
 
-
+        #returns the lowest values in a dict.
         def lowestThree(self):
             sorteret=(sorted(self.master.fodboldtur.items(), key=lambda item: item[1]))
-            print(sorteret)
             return sorteret[0:3]
-            """while len(templist) > 3:
-                #templist.values.pop(max(templist))
-                r = templist(max(templist))
-                del r[templist]
-            print("De her er dem der har betalt mindst")
-            print(templist)
-            return templist
-"""
+
 
         templist = lowestThree(self)
         height = len(templist)
@@ -33,7 +24,7 @@ class worstWindowClass:
 
         width = 2
 
-
+        #makes a grid of the lowest 3
         for i in range(height):  # Rows
             for j in range(width):  # Columns
                 b = Label(self.worstWindow, text=templist[i][j])

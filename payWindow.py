@@ -18,7 +18,8 @@ class payWindowClass:
         key = self.master.fodboldtur.keys()
         keyList = list(key)
 
-#OptionMenu(master,     variable,     value,     *values,     **kwargs    )
+        #DropDown creates a list of options
+        #OptionMenu(master,     variable,     value,     *values,     **kwargs    )
         self.dropDown = OptionMenu(self.payWindow, self.options, None, *keyList)
         self.dropDown.pack()
 
@@ -28,6 +29,7 @@ class payWindowClass:
         self.button = Button(self.payWindow, text="betal", command= self.addMoney)
         self.button.pack(pady=2)
 
+    #Adds the number decieded in Entry, and then assigned it to the name from dropdown, and updates progressbar.
     def addMoney(self):
         try:
             self.master.fodboldtur[self.options.get()] += int(self.money.get())

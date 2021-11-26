@@ -19,17 +19,15 @@ class mainWindow:
         self.fodboldtur = {}
         self.root.title("Main")
 
-
+        #Pickle saves the dict locally in a dict
         try:
             infile = open(filename, 'rb')
             self.fodboldtur = pickle.load(infile)
             infile.close()
         except:
-            ###warn warn popoupupopppp
-            print("Noget gik galt i loading a pickle")
+            print("Noget gik galt i loading af pickle")
         #TEXT
         self.total = sum(self.fodboldtur[item] for item in self.fodboldtur)
-        print(self.total)
 
         velkomst = Label(self.root, text="Velkommen til fodboldtur GUI")
         velkomst.pack(pady=10)
@@ -37,6 +35,7 @@ class mainWindow:
         payButton = Button(self.root,text ="Indbetal",command = lambda: payWindowClass(self))
         payButton.pack(padx = 20, pady = 10,side=LEFT)
 
+        #Saves in pickle file
         saveButton = Button(self.root,text ="Gem",command = self.savePickleDict)
         saveButton.pack(padx = 20, pady = 10,side=RIGHT)
 
@@ -50,8 +49,7 @@ class mainWindow:
                     length = 250, mode = 'determinate')
         self.total = sum(self.fodboldtur[item] for item in self.fodboldtur)
         self.progress['value'] = self.total/self.target*100
-        #print(self.progress['length'])
-        #print(self.progress['value'])
+
         #BUTTONS
         self.progress.pack(padx= 20, pady= 10)
 
@@ -73,12 +71,7 @@ class mainWindow:
         pickle.dump(self.fodboldtur, outfile)
         outfile.close()
         print("Filen er gemt!")
-        print(self.fodboldtur)
-
-
 
 if __name__ == '__main__':
 
     main = mainWindow()
-
-    print("hej")
