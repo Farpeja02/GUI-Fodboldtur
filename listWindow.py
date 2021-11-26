@@ -7,7 +7,7 @@ class listWindowClass:
         self.master = master #reference til main window objektet
         self.listWindow = Toplevel(self.master.root)
         self.listWindow.title("List Window")
-        self.listWindow.geometry("500x500")
+        self.listWindow.geometry("150x300")
 
 
         height = len(self.master.fodboldtur)
