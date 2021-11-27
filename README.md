@@ -1,28 +1,28 @@
 **Herunder kan man se dokumentation på strukturering af projektet.**
 
-Dette er vores strukturerings tegninger, efter projektet er færdiggjort.
+*Dette er vores strukturerings tegninger, efter projektet er færdiggjort.*
 
 **GUI sketch:**
-INDSÆT TEGNING HER!!!!
-
+![GUI sketch](Images/GUIsketch%232.jpg)
 Gui sketchene ændrede sig meget under projektet. Der var funktioner der var brug for som ikke var tilstede i den først tegning.
 Mange af Tk funktionerne der var planlagt, endte med at være korrekt, men der manglede bare features, vi ikke havde tænkt over.
 
 **UML diagram:**
-INDSÆT TEGNING HER!!!!
-
+![UML diagram](Images/UMLdiagram%233.jpg)
 Efter vi var færdige med at skrive koden, har vi lavet en fornyet udgave af UMl diagrammerne, som tager udgangspunkt i 
 de forskellige ændringer vi har lavet igennem vores proces. 
 
 **Flowchart:**
-INDSÆT TEGNING HER!!!!
+![Flowchart](Images/Flowchart%233.jpg)
+
 
 Trello Timeline viser hvordan vores arbejds fordeling, og overblik over arbejdsplan, har set ud igennem projektet.
 **Trello Timeline:** https://trello.com/b/noTSdpqj/fodboldturgui
 ![Trello Timeline](Images/TrelloTimeline.png)
 
 
-Dette er vores strukturerings tegninger, fra da vi startede på projektet.
+*Dette er vores strukturerings tegninger, fra da vi startede på projektet.*
+
 **GUI sketch:**
 ![GUi sketch](Images/GUIsketch%231.jpg)
 Vi startede ud med at, lave et visuelt overblik over projektets design. Hvor vi fokuserede på objektorienteret design.
