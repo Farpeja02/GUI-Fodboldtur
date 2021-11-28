@@ -14,7 +14,8 @@ de forskellige ændringer vi har lavet igennem vores proces.
 
 **Flowchart:**
 ![Flowchart](Images/Flowchart%233.jpg)
-
+Ved flowchartet kan man virkelig se udviklingen i programmet, og tilføjelsen af de andre vinduer.
+Flowchartet er også farve sorteret efter de forskellige vinduer.
 
 Trello Timeline viser hvordan vores arbejds fordeling, og overblik over arbejdsplan, har set ud igennem projektet.
 **Trello Timeline:** https://trello.com/b/noTSdpqj/fodboldturgui

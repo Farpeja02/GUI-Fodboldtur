@@ -30,14 +30,6 @@ class worstWindowClass:
                 b = Label(self.worstWindow, text=templist[i][j])
                 b.grid(row=i, column=j)
 
-                """if j == 0:
-
-                    text = str(list(templist.keys())[i])
-                    b = Label(self.worstWindow, text=text)
-                else:
-                    b = Label(self.worstWindow, text=str(valueList[i]))
-"""
-
 
 
 
