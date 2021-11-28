@@ -21,6 +21,12 @@ Trello Timeline viser hvordan vores arbejds fordeling, og overblik over arbejdsp
 **Trello Timeline:** https://trello.com/b/noTSdpqj/fodboldturgui
 ![Trello Timeline](Images/TrelloTimeline.png)
 
+**Bruger test**
+Vi afprøvede programmet på Kalja's kæreste Maja. Maja har ikke meget baggrundsviden for teknologi, så vi følte de vil være en god test person.
+Der var ikke meget feedback og give, da det hele føles meget simpelt. De prøvede alle featuresne af og de fungeret som de forventet.
+Der var meget affordance fra hvordan andre programmer fungerer. Dette gjorde at de meget nemt kunne finde ud af hvordan man lukkede visse vinduer.
+
+
 
 *Dette er vores strukturerings tegninger, fra da vi startede på projektet.*
 
